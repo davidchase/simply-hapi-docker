@@ -1,0 +1,12 @@
+version: '2'
+volumes:
+  nodemodules:
+services:
+  hapi:
+    build: .
+    command: node_modules/.bin/nodemon index.js
+    ports:
+     - "8001:8001"
+    volumes:
+     - .:/home/hapi
+     - nodemodules:/home/hapi/node_modules
